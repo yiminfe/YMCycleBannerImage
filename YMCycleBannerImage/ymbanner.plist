@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>ymurl</key>
+		<string>http://www.apple.com/apple-events/</string>
+		<key>title</key>
+		<string>苹果发布会</string>
+		<key>ymbanner</key>
+		<string>ymbanner1</string>
+	</dict>
+	<dict>
+		<key>ymurl</key>
+		<string>http://www.apple.com/watch/</string>
+		<key>title</key>
+		<string>apple watch 苹果手表</string>
+		<key>ymbanner</key>
+		<string>ymbanner2</string>
+	</dict>
+	<dict>
+		<key>ymurl</key>
+		<string>http://www.apple.com/ipad-pro/</string>
+		<key>title</key>
+		<string>ipad pro</string>
+		<key>ymbanner</key>
+		<string>ymbanner3</string>
+	</dict>
+	<dict>
+		<key>ymurl</key>
+		<string>http://www.apple.com/iphone-se/</string>
+		<key>title</key>
+		<string>iPhone SE</string>
+		<key>ymbanner</key>
+		<string>ymbanner4</string>
+	</dict>
+</array>
+</plist>
