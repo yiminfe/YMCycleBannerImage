@@ -78,11 +78,11 @@
 <br>bannerView.ym_titleLabel.textColor = [UIColor redColor];//设置标题的字体颜色
 <br>//其它扩展属性:frame、hidden</span></pre></div>
 <h2 id="pagestyles">自定分页指示器</h2>
-<img src="https://raw.githubusercontent.com/iosdeveloperSVIP/YMCycleBannerImage/master/pagestyles.gif"></img>
+<img src="https://raw.githubusercontent.com/iosdeveloperSVIP/YMCycleBannerImage/master/pagetyles.gif"></img>
 <div class="highlight highlight-source-objc"><pre>
 <span class="pl-k">//自定义分页指示器图标
-<br>bannerView.ym_currentPageImage = [UIImage imageNamed:@"ym_currentPageImage.png"];
-<br>bannerView.ym_pageImage = [UIImage imageNamed:@"ym_pageImage.png"];
+<br>bannerView.ym_currentPageImage = [UIImage imageNamed:@"图片路径"];
+<br>bannerView.ym_pageImage = [UIImage imageNamed:@"图片路径"];
 <br>//使用apple官方分页指示器颜色图标
 <br>bannerView.ym_currentPageIndicatorTintColor = [UIColor redColor];
 <br>bannerView.ym_pageIndicatorTintColor = [UIColor whiteColor];
