@@ -4,7 +4,7 @@
 <li>前提条件：对应的数据模型类和对应的属性key值</li>
 <li>必选参数：frame、代理控制器、本地模型数组或者网络模型数组、自动轮播时间间隔、与对应的图片key值、占位图片路径、转场url的key</li>
 <li>可选参数：标题key值（nil为不设置蒙版）、是否隐藏分页指示器(YES为隐藏)</li>
-<li>协议：YMCycleBannerViewDelegate 代理方法(将专场的url值直接传出来了)：ymCycleBannerView:didSelectItemUrl:</li>
+<li>协议：YMCycleBannerViewDelegate 代理方法(将转场的url值直接传出来了)：ymCycleBannerView:didSelectItemUrl:</li>
 <li>框架特点：性能超强、混合无瑕疵、使用超简单，一行代码搞定，轮播流畅度AppStore无敌</li>
 <img src="https://raw.githubusercontent.com/iosdeveloperSVIP/YMCycleBannerImage/master/ymbanner.gif"></img>
 </ul>
@@ -58,9 +58,9 @@
 <br>Delegate:self banners:bannerModel2 duration:2.0 
 <br>ImageUrlKeyPath:@"ymbanner" placeholder:nil urlKeyPath:@"ymurl" 
 <br>titleKeyPath:@"title" hiddenPage:NO];
-<br>//参数解析:initWithFrame(轮播视图的大小和位置) Delegate(传入代理控制器) banners(数据模型数组)
+<br><span class="pl-c">//参数解析:initWithFrame(轮播视图的大小和位置) Delegate(传入代理控制器) banners(数据模型数组)
 <br>//duration(轮播时间间隔) ImageUrlKeyPath(图片url的模型key值) placeholder(本地占位图片路径) 
-<br>//urlKeyPath(转场url的模型key值) titleKeyPath(标题栏的模型key值) hiddenPage(是否隐藏分页指示器)
+<br>//urlKeyPath(转场url的模型key值) titleKeyPath(标题栏的模型key值) hiddenPage(是否隐藏分页指示器)</span>
 <br>[self.view addSubview:bannerView];
 <br>YMCycleBannerViewDelegate //请遵守协议
 <br>-(void)ymCycleBannerView:(YMCycleBannerView *)ymCycleBannerView didSelectItemUrl:(NSURL *)url
