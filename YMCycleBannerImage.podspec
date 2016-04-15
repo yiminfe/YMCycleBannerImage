@@ -5,8 +5,8 @@ Pod::Spec.new do |s|
     s.homepage     = 'https://github.com/iosdeveloperSVIP/YMCycleBannerImage'
     s.license      = 'MIT'
     s.authors      = {'zhaoyimin' => 'iosdeveloper@vip.163.com'}
-    s.platform     = :ios, '7.0'
-    s.source       = {:git => 'https://github.com/iosdeveloperSVIP/YMCycleBannerImage/ymbanner.gif', :tag => s.version}
+    s.platform     = :ios, '8.0'
+    s.source       = {:git => 'https://github.com/iosdeveloperSVIP/YMCycleBannerImage.git', :tag => s.version}
     s.source_files = 'YMCycleBannerImage/*.{h,m}'
     s.resource     = 'YMCycleBannerImage/YMCycleBannerImage.bundle'
     s.requires_arc = true
