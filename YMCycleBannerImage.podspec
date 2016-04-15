@@ -4,10 +4,10 @@ Pod::Spec.new do |s|
     s.summary      = 'One line of code with infinite shuffling'
     s.homepage     = 'https://github.com/iosdeveloperSVIP/YMCycleBannerImage'
     s.license      = 'MIT'
-    s.authors      = {'yimin' => 'iosdeveloper@vip.163.com'}
+    s.authors      = {'zhaoyimin' => 'iosdeveloper@vip.163.com'}
     s.platform     = :ios, '7.0'
     s.source       = {:git => 'https://github.com/iosdeveloperSVIP/YMCycleBannerImage/ymbanner.gif', :tag => s.version}
-    s.source_files = 'YMCycleBannerImage/YMCycleBannerImage/*.{h,m}'
-    s.resource     = 'YMCycleBannerImage/YMCycleBannerImage/YMCycleBannerImage.bundle'
+    s.source_files = 'YMCycleBannerImage/*.{h,m}'
+    s.resource     = 'YMCycleBannerImage/YMCycleBannerImage.bundle'
     s.requires_arc = true
 end
