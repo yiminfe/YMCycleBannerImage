@@ -10,7 +10,6 @@
 #import "YMCycleBannerCell.h"
 #import "YMCycleBannerLayout.h"
 #import "UIImage+YMImageEffects.h"
-#import "AppDelegate.h"
 
 //static NSString *identifier = @"YMCell";
 
