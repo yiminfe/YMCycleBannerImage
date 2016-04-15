@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = 'YMCycleBannerImage'
-    s.version      = '1.0.1'
+    s.version      = '1.2.4'
     s.summary      = 'One line of code with infinite shuffling'
     s.homepage     = 'https://github.com/iosdeveloperSVIP/YMCycleBannerImage'
     s.license      = 'MIT'
