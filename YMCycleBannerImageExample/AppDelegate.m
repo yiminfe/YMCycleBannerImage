@@ -19,8 +19,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //创建window对象
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[YMViewController new]];
     //设置跟控制器
-    self.window.rootViewController = [YMViewController new];
+    self.window.rootViewController = nav;
     //可视化
     [self.window makeKeyAndVisible];
     return YES;

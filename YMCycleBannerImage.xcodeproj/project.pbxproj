@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040298CB1CC8DCA7001844D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040298CA1CC8DCA7001844D9 /* LaunchScreen.storyboard */; };
 		040650CB1CC135490080E0B1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 040650771CC135490080E0B1 /* AppDelegate.m */; };
 		040650CC1CC135490080E0B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040650781CC135490080E0B1 /* Assets.xcassets */; };
-		040650CD1CC135490080E0B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040650791CC135490080E0B1 /* LaunchScreen.storyboard */; };
 		040650CF1CC135490080E0B1 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0406507F1CC135490080E0B1 /* AFHTTPSessionManager.m */; };
 		040650D01CC135490080E0B1 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 040650821CC135490080E0B1 /* AFNetworkReachabilityManager.m */; };
 		040650D11CC135490080E0B1 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 040650841CC135490080E0B1 /* AFSecurityPolicy.m */; };
@@ -56,10 +56,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		040298CA1CC8DCA7001844D9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		040650761CC135490080E0B1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		040650771CC135490080E0B1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		040650781CC135490080E0B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0406507A1CC135490080E0B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0406507E1CC135490080E0B1 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		0406507F1CC135490080E0B1 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		040650801CC135490080E0B1 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -168,7 +168,6 @@
 				040650771CC135490080E0B1 /* AppDelegate.m */,
 				040650781CC135490080E0B1 /* Assets.xcassets */,
 				040651061CC136AF0080E0B1 /* Info.plist */,
-				040650791CC135490080E0B1 /* LaunchScreen.storyboard */,
 				0406507C1CC135490080E0B1 /* Lib */,
 				040650C31CC135490080E0B1 /* main.m */,
 				040650C41CC135490080E0B1 /* nuomiModel.h */,
@@ -178,6 +177,7 @@
 				040650C81CC135490080E0B1 /* ymbannerModel.m */,
 				040650C91CC135490080E0B1 /* YMViewController.h */,
 				040650CA1CC135490080E0B1 /* YMViewController.m */,
+				040298CA1CC8DCA7001844D9 /* LaunchScreen.storyboard */,
 			);
 			path = YMCycleBannerImageExample;
 			sourceTree = "<group>";
@@ -283,17 +283,17 @@
 		040650F41CC135530080E0B1 /* YMCycleBannerImage */ = {
 			isa = PBXGroup;
 			children = (
+				040650FE1CC135530080E0B1 /* YMCycleBannerView.h */,
+				040650FF1CC135530080E0B1 /* YMCycleBannerView.m */,
+				040650F91CC135530080E0B1 /* YMCycleBannerCell.h */,
+				040650FA1CC135530080E0B1 /* YMCycleBannerCell.m */,
+				040650FC1CC135530080E0B1 /* YMCycleBannerLayout.h */,
+				040650FD1CC135530080E0B1 /* YMCycleBannerLayout.m */,
 				040650F51CC135530080E0B1 /* UIImage+YMImageEffects.h */,
 				040650F61CC135530080E0B1 /* UIImage+YMImageEffects.m */,
 				040650F71CC135530080E0B1 /* UIImageView+YMDownloadBannerImage.h */,
 				040650F81CC135530080E0B1 /* UIImageView+YMDownloadBannerImage.m */,
-				040650F91CC135530080E0B1 /* YMCycleBannerCell.h */,
-				040650FA1CC135530080E0B1 /* YMCycleBannerCell.m */,
 				040650FB1CC135530080E0B1 /* YMCycleBannerImage.bundle */,
-				040650FC1CC135530080E0B1 /* YMCycleBannerLayout.h */,
-				040650FD1CC135530080E0B1 /* YMCycleBannerLayout.m */,
-				040650FE1CC135530080E0B1 /* YMCycleBannerView.h */,
-				040650FF1CC135530080E0B1 /* YMCycleBannerView.m */,
 			);
 			path = YMCycleBannerImage;
 			sourceTree = "<group>";
@@ -375,7 +375,7 @@
 			files = (
 				040650F11CC135490080E0B1 /* ymbanner.plist in Resources */,
 				040650CC1CC135490080E0B1 /* Assets.xcassets in Resources */,
-				040650CD1CC135490080E0B1 /* LaunchScreen.storyboard in Resources */,
+				040298CB1CC8DCA7001844D9 /* LaunchScreen.storyboard in Resources */,
 				040651031CC135530080E0B1 /* YMCycleBannerImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,17 +433,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		040650791CC135490080E0B1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0406507A1CC135490080E0B1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		046450F31CB9392C00C0B712 /* Debug */ = {

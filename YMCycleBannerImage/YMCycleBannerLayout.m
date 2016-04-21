@@ -12,6 +12,7 @@
 
 - (void)prepareLayout {
     [super prepareLayout];
+    self.collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     self.itemSize = self.collectionView.bounds.size;
     self.minimumInteritemSpacing = 0;
     self.minimumLineSpacing = 0;
