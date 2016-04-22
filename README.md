@@ -10,7 +10,8 @@
 </ul>
 <p>GitHub：<a href="https://github.com/iosdeveloperSVIP"  target="_blank">iosdeveloperSVIP</a>
  &nbsp;&nbsp;&nbsp;&nbsp;邮箱：<a href="mailto:iosdeveloper@vip.163.com">iosdeveloper@vip.163.com</a><p>
-<h4>亲爱的各位同行，如果在使用中出现bug，请联系邮箱:iosdeveloper@vip.163.com，如果使用不错的话请帮我点下右上角星星UnStar，非常感谢</h4>
+<h4>亲爱的各位同行，如果在使用中出现bug，请联系邮箱:
+<a href="mailto:iosdeveloper@vip.163.com">iosdeveloper@vip.163.com</a>，如果使用不错的话请帮我点下右上角星星UnStar，非常感谢</h4>
 <h1>操作目录</h1>
 <ul>
 <li><a href="#defaultstyles">默认样式:一行代码搞定</a>
@@ -64,29 +65,29 @@
 <br>//duration(轮播时间间隔) ImageUrlKeyPath(图片url的模型key值) placeholder(本地占位图片路径) 
 <br>//urlKeyPath(转场url的模型key值) titleKeyPath(标题栏的模型key值) hiddenPage(是否隐藏分页指示器)</span>
 <br>[self.view addSubview:bannerView];
-<br>YMCycleBannerViewDelegate //请遵守协议
+<br>YMCycleBannerViewDelegate <span class="pl-c">//请遵守协议</span>
 <br>-(void)ymCycleBannerView:(YMCycleBannerView *)ymCycleBannerView didSelectItemUrl:(NSURL *)url
-<br>//请实现代理方法、url为转场url做控制器跳转操作</span></pre></div>
+<br><span class="pl-c">//请实现代理方法、url为转场url做控制器跳转操作</span></span></pre></div>
 <h2 id="maskstyles">自定义蒙版</h2>
 <img src="https://raw.githubusercontent.com/iosdeveloperSVIP/YMCycleBannerImage/master/maskstyles.gif"></img>
 <div class="highlight highlight-source-objc"><pre>
 <span class="pl-k">bannerView.ym_maskView.backgroundColor = [UIColor blackColor];//设置背景颜色
 <br>bannerView.ym_maskView.alpha = 0.5;//设置透明度
-<br>//其它扩展属性:frame、hidden</span></pre></div>
+<br><span class="pl-c">//其它扩展属性:frame、hidden</span></span></pre></div>
 <h2 id="titlestyles">自定标题栏</h2>
 <img src="https://raw.githubusercontent.com/iosdeveloperSVIP/YMCycleBannerImage/master/titlestyles.gif"></img>
 <div class="highlight highlight-source-objc"><pre>
-<span class="pl-k">bannerView.ym_titleLabel.font = [UIFont systemFontOfSize:20.0];//设置标题的字体大小
-<br>bannerView.ym_titleLabel.textColor = [UIColor redColor];//设置标题的字体颜色
-<br>//其它扩展属性:frame、hidden</span></pre></div>
+<span class="pl-k">bannerView.ym_titleLabel.font = [UIFont systemFontOfSize:20.0];<span class="pl-c">//设置标题的字体大小</span>
+<br>bannerView.ym_titleLabel.textColor = [UIColor redColor];<span class="pl-c">//设置标题的字体颜色</span>
+<br><span class="pl-c">//其它扩展属性:frame、hidden</span></span></pre></div>
 <h2 id="pagestyles">自定分页指示器</h2>
 <img src="https://raw.githubusercontent.com/iosdeveloperSVIP/YMCycleBannerImage/master/pagetyles.gif"></img>
 <div class="highlight highlight-source-objc"><pre>
-<span class="pl-k">//自定义分页指示器图标
+<span class="pl-k"><span class="pl-c">//自定义分页指示器图标</span>
 <br>bannerView.ym_currentPageImage = [UIImage imageNamed:@"图片路径"];
 <br>bannerView.ym_pageImage = [UIImage imageNamed:@"图片路径"];
-<br>//使用apple官方分页指示器颜色图标
+<br><span class="pl-c">//使用apple官方分页指示器颜色图标</span>
 <br>bannerView.ym_currentPageIndicatorTintColor = [UIColor redColor];
 <br>bannerView.ym_pageIndicatorTintColor = [UIColor whiteColor];
-<br>//其它扩展属性:frame,如需设置隐藏请设置初始化参数hiddenPage为YES</span></pre></div>
+<br><span class="pl-c">//其它扩展属性:frame,如需设置隐藏请设置初始化参数hiddenPage为YES</span></span></pre></div>
 <h4>亲爱的各位同行，如果你已经浏览到这，请帮我点下右上角星星UnStar，非常感谢</h4>
