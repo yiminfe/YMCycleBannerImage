@@ -8,7 +8,8 @@
 <li>框架特点：性能超强、混合无瑕疵、使用超简单，一行代码搞定，轮播流畅度AppStore无敌</li>
 <img src="https://raw.githubusercontent.com/iosdeveloperSVIP/YMCycleBannerImage/master/ymbanner.gif"></img>
 </ul>
-<p>GitHub：<a href="https://github.com/iosdeveloperSVIP"  target="_blank">iosdeveloperSVIP</a><p>
+<p>GitHub：<a href="https://github.com/iosdeveloperSVIP"  target="_blank">iosdeveloperSVIP</a>
+ &nbsp;&nbsp;&nbsp;&nbsp;邮箱：<a href="mailto:iosdeveloper@vip.163.com">iosdeveloper@vip.163.com</a><p>
 <h4>亲爱的各位同行，如果在使用中出现bug，请联系邮箱:iosdeveloper@vip.163.com，如果使用不错的话请帮我点下右上角星星UnStar，非常感谢</h4>
 <h1>操作目录</h1>
 <ul>
