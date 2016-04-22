@@ -9,6 +9,7 @@
 <img src="https://raw.githubusercontent.com/iosdeveloperSVIP/YMCycleBannerImage/master/ymbanner.gif"></img>
 </ul>
 <p>GitHub：<a href="https://github.com/iosdeveloperSVIP"  target="_blank">iosdeveloperSVIP</a><p>
+<h4>亲爱的各位同行，如果在使用中出现bug，请联系邮箱:iosdeveloper@vip.163.com，如果使用不错的话请帮我点下右上角星星UnStar，非常感谢</h4>
 <h1>操作目录</h1>
 <ul>
 <li><a href="#defaultstyles">默认样式:一行代码搞定</a>
@@ -36,7 +37,7 @@
 <li><a href="#pagestyles">3.设置ym_pageImage来设置分页指示器的默认小图标</a></li>
 <li><a href="#pagestyles">4.设置ym_currentPageIndicatorTintColor来设置分页指示器的当前apple官方图标</a></li>
 <li><a href="#pagestyles">5.设置ym_pageIndicatorTintColor来设置分页指示器的默认apple官方图标</a></li>
-<li>隐藏：请将将初始化方法参数设置为YES</li>
+<li><a href="#pagestyles">隐藏：请将将初始化方法参数设置为YES</a></li>
 </ul>
 </li>
 </ul>
@@ -87,3 +88,4 @@
 <br>bannerView.ym_currentPageIndicatorTintColor = [UIColor redColor];
 <br>bannerView.ym_pageIndicatorTintColor = [UIColor whiteColor];
 <br>//其它扩展属性:frame,如需设置隐藏请设置初始化参数hiddenPage为YES</span></pre></div>
+<h4>亲爱的各位同行，如果你已经浏览到这，请帮我点下右上角星星UnStar，非常感谢</h4>
