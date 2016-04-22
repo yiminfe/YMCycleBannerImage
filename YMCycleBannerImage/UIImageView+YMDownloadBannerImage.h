@@ -1,4 +1,8 @@
+//代码地址：https://github.com/iosdeveloperSVIP/YMCycleBannerImage
+//原创：iosdeveloper赵依民
+//邮箱：iosdeveloper@vip.163.com
 //
+
 //  UIImageView+YMDownloadBannerImage.h
 //  YMCycleBannerImage
 //
