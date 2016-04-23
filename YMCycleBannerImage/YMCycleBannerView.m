@@ -27,14 +27,13 @@
     UICollectionView *_ym_collectionView;
     UIPageControl *_ym_pageView;
     NSString *_ym_ImageUrlKeyPath;
-    NSString *_ym_urlKeyPath;
     NSString *_ym_titleKeyPath;
     NSTimeInterval _ym_duration;
     UIImage *_ym_placeholder;
     NSDictionary<NSString *, id> *_ym_attrs;
 }
 
--(instancetype)initWithFrame:(CGRect)frame Delegate:(id)target banners:(NSArray *)ym_banners duration:(NSTimeInterval)ym_duration ImageUrlKeyPath:(NSString *)ym_ImageUrlKeyPath placeholder:(NSString *)ym_placeholder urlKeyPath:(NSString *)ym_urlKeyPath titleKeyPath:(NSString *)ym_titleKeyPath hiddenPage:(BOOL)hiddenPage{
+-(instancetype)initWithFrame:(CGRect)frame Delegate:(id)target banners:(NSArray *)ym_banners duration:(NSTimeInterval)ym_duration ImageUrlKeyPath:(NSString *)ym_ImageUrlKeyPath placeholder:(NSString *)ym_placeholder titleKeyPath:(NSString *)ym_titleKeyPath hiddenPage:(BOOL)hiddenPage{
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
@@ -42,7 +41,6 @@
         NSAssert(ym_banners, @"请传入模型数组");
         NSAssert(ym_duration, @"请传入轮播时间间隔");
         NSAssert(ym_ImageUrlKeyPath, @"请传入的图片url的key");
-        NSAssert(ym_urlKeyPath, @"请传入转场url的key");
         self.ym_cycleBannerDelegate = target;
         _ym_banners = ym_banners;
         _ym_duration = ym_duration;
@@ -52,7 +50,6 @@
         }else{
             _ym_placeholder = [UIImage imageNamed:@"YMCycleBannerImage.bundle/ym_iosdeveloper.jpg"];
         }
-        _ym_urlKeyPath = ym_urlKeyPath;
         if (ym_titleKeyPath) {
             _ym_titleKeyPath = ym_titleKeyPath;
         }
@@ -61,7 +58,7 @@
         [self addSubview:_ym_collectionView];
         _ym_collectionView.dataSource = self;
         _ym_collectionView.delegate = self;
-        [_ym_collectionView registerClass:[YMCycleBannerCell class] forCellWithReuseIdentifier:_ym_urlKeyPath];
+        [_ym_collectionView registerClass:[YMCycleBannerCell class] forCellWithReuseIdentifier:_ym_ImageUrlKeyPath];
         dispatch_async(dispatch_get_main_queue(), ^{
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:_ym_banners.count inSection:0];
             [_ym_collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:NO];
@@ -144,7 +141,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    YMCycleBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:_ym_urlKeyPath forIndexPath:indexPath];
+    YMCycleBannerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:_ym_ImageUrlKeyPath forIndexPath:indexPath];
     NSString *ym_url = [_ym_banners valueForKeyPath:_ym_ImageUrlKeyPath][indexPath.item % _ym_banners.count];
     cell.placeholder = _ym_placeholder;
     cell.ym_urlString = ym_url;
@@ -153,10 +150,8 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([self.ym_cycleBannerDelegate respondsToSelector:@selector(ymCycleBannerView:didSelectItemUrl:)]) {
-        NSString *urlString = [_ym_banners valueForKeyPath:_ym_urlKeyPath][indexPath.item % _ym_banners.count];
-        NSURL *url = [NSURL URLWithString:urlString];
-        [self.ym_cycleBannerDelegate ymCycleBannerView:self didSelectItemUrl:url];
+    if ([self.ym_cycleBannerDelegate respondsToSelector:@selector(ymCycleBannerView:didSelectItemAtIndex:)]) {
+        [self.ym_cycleBannerDelegate ymCycleBannerView:self didSelectItemAtIndex:indexPath.item % _ym_banners.count];
     }
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

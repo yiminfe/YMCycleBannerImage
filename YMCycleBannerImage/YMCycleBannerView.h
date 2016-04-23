@@ -14,14 +14,14 @@
 
 @protocol YMCycleBannerViewDelegate <NSObject>
 
-- (void)ymCycleBannerView:(YMCycleBannerView *)ymCycleBannerView didSelectItemUrl:(NSURL *)url;
+- (void)ymCycleBannerView:(YMCycleBannerView *)ymCycleBannerView didSelectItemAtIndex:(NSInteger)index;
 
 @end
 
 @interface YMCycleBannerView : UIView
 
-/** 请设置必要参数：轮播视图的位置、数组模型对象、自动轮播时间间隔、图片url、转场url，可选参数：banner标题、是否隐藏pageView  nil代表隐藏pageView设置YES隐藏*/
--(instancetype)initWithFrame:(CGRect)frame Delegate:(id)target banners:(NSArray *)ym_banners duration:(NSTimeInterval)ym_duration ImageUrlKeyPath:(NSString *)ym_ImageUrlKeyPath placeholder:(NSString *)ym_placeholder urlKeyPath:(NSString *)ym_urlKeyPath titleKeyPath:(NSString *)ym_titleKeyPath hiddenPage:(BOOL)hiddenPage;
+/** 请设置必要参数：轮播视图的位置、数组模型对象、自动轮播时间间隔、图片url，可选参数：banner标题、是否隐藏pageView  nil代表隐藏pageView设置YES隐藏*/
+-(instancetype)initWithFrame:(CGRect)frame Delegate:(id)target banners:(NSArray *)ym_banners duration:(NSTimeInterval)ym_duration ImageUrlKeyPath:(NSString *)ym_ImageUrlKeyPath placeholder:(NSString *)ym_placeholder titleKeyPath:(NSString *)ym_titleKeyPath hiddenPage:(BOOL)hiddenPage;
 
 /** 设置pageView的frame 初始化参数hiddenPage需要设置为NO*/
 @property (nonatomic,assign) CGRect ym_pageFrame;
