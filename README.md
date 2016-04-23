@@ -59,14 +59,14 @@
 <br>initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.width * 0.5, 
 <br>[UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.width * 0.5) 
 <br>Delegate:self banners:bannerModel2 duration:2.0 
-<br>ImageUrlKeyPath:@"ymbanner" placeholder:nil urlKeyPath:@"ymurl" 
+<br>ImageUrlKeyPath:@"ymbanner" placeholder:nil
 <br>titleKeyPath:@"title" hiddenPage:NO];
 <br><span class="pl-c">//参数解析:initWithFrame(轮播视图的大小和位置) Delegate(传入代理控制器) banners(数据模型数组)
 <br>//duration(轮播时间间隔) ImageUrlKeyPath(图片url的模型key值) placeholder(本地占位图片路径) 
 <br>//urlKeyPath(转场url的模型key值) titleKeyPath(标题栏的模型key值) hiddenPage(是否隐藏分页指示器)</span>
 <br>[self.view addSubview:bannerView];
 <br>YMCycleBannerViewDelegate <span class="pl-c">//请遵守协议</span>
-<br>ymCycleBannerView:didSelectItemAtIndex:
+<br>-(void)ymCycleBannerView:(YMCycleBannerView *)ymCycleBannerView     didSelectItemAtIndex:(NSInteger)index
 <br><span class="pl-c">//请实现代理方法、index为选中的数组下标，做控制器跳转操作</span></span></pre></div>
 <h2 id="maskstyles">自定义蒙版</h2>
 <img src="https://raw.githubusercontent.com/iosdeveloperSVIP/YMCycleBannerImage/master/maskstyles.gif"></img>
