@@ -13,31 +13,29 @@
 #import "UIImageView+YMDownloadBannerImage.h"
 #import <objc/runtime.h>
 
-NSArray *ym_bannersArray;
 NSOperationQueue *ym_queue;
 NSCache *ym_imageCache;
 NSCache *ym_operationCache;
+NSMutableDictionary *ym_clearCache;
 
 @implementation UIImageView (YMDownloadBannerImage)
 
 +(void)load{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        ym_bannersArray = [NSArray array];
         ym_queue = [[NSOperationQueue alloc] init];
         ym_imageCache = [[NSCache alloc] init];
         ym_operationCache = [[NSCache alloc] init];
+        ym_clearCache = [NSMutableDictionary dictionary];
         Method systemMethod = class_getInstanceMethod([self class], @selector(setImage:));
         Method myMethod = class_getInstanceMethod([self class], @selector(ym_setImage:));
         class_addMethod([self class], @selector(setImage:), method_getImplementation(myMethod), method_getTypeEncoding(myMethod));
-        
-//        class_replaceMethod([self class], @selector(ym_setImage:), method_getImplementation(systemMethod), method_getTypeEncoding(systemMethod));
-        
         method_exchangeImplementations(systemMethod,myMethod);
     });
 }
 
 -(void)ym_setImageWithUrl:(NSString *)urlString placeholder:(UIImage *)placeholder{
+    static dispatch_once_t onceToken;
     if ([ym_imageCache objectForKey:urlString]) {
         [self setImage:[ym_imageCache objectForKey:urlString]];
         return;
@@ -50,6 +48,29 @@ NSCache *ym_operationCache;
     if (ym_image!=nil) {
         [self ym_setImage:ym_image];
         [ym_imageCache setObject:ym_image forKey:urlString];
+        dispatch_once(&onceToken, ^{
+            //清理一个星期之前缓存的图片
+            ym_clearCache = [NSMutableDictionary dictionaryWithContentsOfFile:[self ym_clearCachePath]];
+            if (ym_clearCache) {
+                NSMutableArray *tempArray = [NSMutableArray array];
+                NSFileManager *ym_fileManager = [[NSFileManager alloc]init];
+                for (NSString *key in ym_clearCache) {
+                    if ([ym_clearCache[key] compare:[NSDate date]] == NSOrderedAscending) {
+                        bool isbe  = 0;
+                        if ([ym_imageCache objectForKey:key]) {
+                            isbe = 1;
+                        }
+                        if (isbe) {
+                            continue;
+                        }
+                        [tempArray addObject:key];
+                        [ym_fileManager removeItemAtPath:[self ym_appendCachePath:key] error:nil];
+                    }
+                }
+                [ym_clearCache removeObjectsForKeys:tempArray];
+                [ym_clearCache writeToFile:[self ym_clearCachePath] atomically:YES];
+            }
+        });
         return;
     }
     [self ym_setImage:placeholder];
@@ -64,6 +85,10 @@ NSCache *ym_operationCache;
                     [(UICollectionView *)self.superview.superview.superview reloadData];
                 }
                 [ym_data writeToFile:[self ym_appendCachePath:urlString] atomically:YES];
+                NSDate *ym_date = [[NSDate date] dateByAddingTimeInterval:(60 * 60 * 24 * 7)];
+                [ym_clearCache setObject:ym_date forKey:urlString];
+                [ym_clearCache writeToFile:[self ym_clearCachePath] atomically:YES];
+                
             }
             [ym_operationCache removeObjectForKey:urlString];
         }];
@@ -85,6 +110,12 @@ NSCache *ym_operationCache;
     UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     [self ym_setImage:result];
+}
+
+-(NSString *)ym_clearCachePath{
+     NSString *ym_path= [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *ym_filePath = [ym_path stringByAppendingPathComponent:@"YMCycleBannerImage.plist"];
+    return ym_filePath;
 }
 
 

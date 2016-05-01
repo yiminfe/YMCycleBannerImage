@@ -53,6 +53,7 @@
 		040651031CC135530080E0B1 /* YMCycleBannerImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 040650FB1CC135530080E0B1 /* YMCycleBannerImage.bundle */; };
 		040651041CC135530080E0B1 /* YMCycleBannerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 040650FD1CC135530080E0B1 /* YMCycleBannerLayout.m */; };
 		040651051CC135530080E0B1 /* YMCycleBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040650FF1CC135530080E0B1 /* YMCycleBannerView.m */; };
+		045632C01CCFBBF60093CFE3 /* YMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 045632BF1CCFBBF60093CFE3 /* YMWebViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -147,6 +148,8 @@
 		040650FE1CC135530080E0B1 /* YMCycleBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMCycleBannerView.h; sourceTree = "<group>"; };
 		040650FF1CC135530080E0B1 /* YMCycleBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMCycleBannerView.m; sourceTree = "<group>"; };
 		040651061CC136AF0080E0B1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		045632BE1CCFBBF60093CFE3 /* YMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMWebViewController.h; sourceTree = "<group>"; };
+		045632BF1CCFBBF60093CFE3 /* YMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMWebViewController.m; sourceTree = "<group>"; };
 		046450DE1CB9392C00C0B712 /* YMCycleBannerImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YMCycleBannerImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -177,6 +180,8 @@
 				040650C81CC135490080E0B1 /* ymbannerModel.m */,
 				040650C91CC135490080E0B1 /* YMViewController.h */,
 				040650CA1CC135490080E0B1 /* YMViewController.m */,
+				045632BE1CCFBBF60093CFE3 /* YMWebViewController.h */,
+				045632BF1CCFBBF60093CFE3 /* YMWebViewController.m */,
 				040298CA1CC8DCA7001844D9 /* LaunchScreen.storyboard */,
 			);
 			path = YMCycleBannerImageExample;
@@ -404,6 +409,7 @@
 				040650F31CC135490080E0B1 /* YMViewController.m in Sources */,
 				040650EF1CC135490080E0B1 /* main.m in Sources */,
 				040650D71CC135490080E0B1 /* MJProperty.m in Sources */,
+				045632C01CCFBBF60093CFE3 /* YMWebViewController.m in Sources */,
 				040650D61CC135490080E0B1 /* MJFoundation.m in Sources */,
 				040650D21CC135490080E0B1 /* AFURLRequestSerialization.m in Sources */,
 				040650D41CC135490080E0B1 /* AFURLSessionManager.m in Sources */,
