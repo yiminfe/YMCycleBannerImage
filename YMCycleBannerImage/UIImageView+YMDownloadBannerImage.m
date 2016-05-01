@@ -49,27 +49,29 @@ NSMutableDictionary *ym_clearCache;
         [self ym_setImage:ym_image];
         [ym_imageCache setObject:ym_image forKey:urlString];
         dispatch_once(&onceToken, ^{
-            //清理一个星期之前缓存的图片
-            ym_clearCache = [NSMutableDictionary dictionaryWithContentsOfFile:[self ym_clearCachePath]];
-            if (ym_clearCache) {
-                NSMutableArray *tempArray = [NSMutableArray array];
-                NSFileManager *ym_fileManager = [[NSFileManager alloc]init];
-                for (NSString *key in ym_clearCache) {
-                    if ([ym_clearCache[key] compare:[NSDate date]] == NSOrderedAscending) {
-                        bool isbe  = 0;
-                        if ([ym_imageCache objectForKey:key]) {
-                            isbe = 1;
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                //清理一个星期之前缓存的图片
+                ym_clearCache = [NSMutableDictionary dictionaryWithContentsOfFile:[self ym_clearCachePath]];
+                if (ym_clearCache) {
+                    NSMutableArray *tempArray = [NSMutableArray array];
+                    NSFileManager *ym_fileManager = [[NSFileManager alloc]init];
+                    for (NSString *key in ym_clearCache) {
+                        if ([ym_clearCache[key] compare:[NSDate date]] == NSOrderedAscending) {
+                            bool isbe  = 0;
+                            if ([ym_imageCache objectForKey:key]) {
+                                isbe = 1;
+                            }
+                            if (isbe) {
+                                continue;
+                            }
+                            [tempArray addObject:key];
+                            [ym_fileManager removeItemAtPath:[self ym_appendCachePath:key] error:nil];
                         }
-                        if (isbe) {
-                            continue;
-                        }
-                        [tempArray addObject:key];
-                        [ym_fileManager removeItemAtPath:[self ym_appendCachePath:key] error:nil];
                     }
+                    [ym_clearCache removeObjectsForKeys:tempArray];
+                    [ym_clearCache writeToFile:[self ym_clearCachePath] atomically:YES];
                 }
-                [ym_clearCache removeObjectsForKeys:tempArray];
-                [ym_clearCache writeToFile:[self ym_clearCachePath] atomically:YES];
-            }
+            });
         });
         return;
     }
@@ -113,7 +115,7 @@ NSMutableDictionary *ym_clearCache;
 }
 
 -(NSString *)ym_clearCachePath{
-     NSString *ym_path= [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *ym_path= [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     NSString *ym_filePath = [ym_path stringByAppendingPathComponent:@"YMCycleBannerImage.plist"];
     return ym_filePath;
 }
